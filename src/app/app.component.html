@@ -325,6 +325,7 @@
     </a>
 </div>
 
+
 <div class="content" role="main">
 
   <!-- Highlight Card -->
@@ -482,3 +483,45 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <router-outlet></router-outlet>
+
+<app-heaader ></app-heaader>
+
+<div class="home-page">
+
+  <div class="banner">
+    <div class="container">
+      <h1 class="logo-font" [title]="title">{{title}}</h1>
+      <p [innerHTML]="subtitle"></p>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-9">
+        <button *ngFor="let p of pages; let i=index" (click)="switchToPage(i)">{{i+1}}</button>
+      </div>
+    </div>
+    <div class="row">
+      <section class="col-md-8 content-wrapper">
+        <div class="feed-toggle">
+          <ul class="nav nav-pills outline-active">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Article List ({{articlesCount}})</a>
+            </li>
+          </ul>
+        </div>
+      <app-article-list [list]="list|filterArticle:keyword"></app-article-list>
+      </section>
+      <aside class="col-md-4 sidebar-wrapper">
+      <app-tags></app-tags>
+      </aside>
+    </div>
+  </div>
+w
+</div>
+
+
+<footer>
+ <app-footer></app-footer>
+</footer>
+
