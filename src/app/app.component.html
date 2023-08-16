@@ -513,11 +513,11 @@
       <app-article-list [list]="list|filterArticle:keyword"></app-article-list>
       </section>
       <aside class="col-md-4 sidebar-wrapper">
-      <app-tags></app-tags>
+      <app-tags (choose)="chooseTag($event)"></app-tags>
       </aside>
     </div>
   </div>
-w
+
 </div>
 
 
